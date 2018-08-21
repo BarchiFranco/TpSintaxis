@@ -18,8 +18,7 @@ int sonNumeros(char *numeritos)
 escribirTipo(char*numero,int primero){
 
     FILE *f;
-
-    f=fopen("destruccion.txt","w");
+    f=fopen("Tp.txt","w");
 
     int tamanio = strlen(numero);
     fwrite(numero , 1 , tamanio , f);
@@ -28,7 +27,6 @@ escribirTipo(char*numero,int primero){
         if(numero[1]=='x' || numero[1]=='X'){
             if(sonNumeros(numero+2)&& (numero[2]!=NULL)) fprintf (f, ": Hexadecimal\n");
             else fprintf (f, ": Error\n");
-
         }
         else{
             if(sonNumeros(numero+1)&& (numero[1]!=NULL)) fprintf (f, ": Octal\n");
